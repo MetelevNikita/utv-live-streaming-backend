@@ -2,11 +2,13 @@ const express = require('express');
 const dotenv= require('dotenv').config();
 const cors = require('cors');
 const path = require('path');
+const cookieParser  = require('cookie-parser');
 
 // module
 
 
-const loginRouter = require('./Router/loginRouter');
+const registrationRouter = require('./Router/registrationRouter')
+const loginRouter  = require('./Router/loginRouter')
 
 //
 
@@ -23,14 +25,18 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:  true}));
 app.use(express.static(publicPath));
+app.use(cookieParser());
 
 // use routes
 
 
+app.use('/api/v1', registrationRouter);
 app.use('/api/v1', loginRouter);
 
 
+// middleware
 
+const authJwtToken = require('./middleware/authJwtToken');
 
 
 // work router
@@ -40,7 +46,11 @@ app.get('/login', (req, res) => {
   res.sendFile(publicPath + '/html/login.html');
 })
 
-app.get('/create',  (req, res)  =>  {
+app.get('/registration', (req, res) => {
+  res.sendFile(publicPath  +  '/html/registration.html');
+})
+
+app.get('/create', authJwtToken,  (req, res)  =>  {
     res.sendFile(publicPath + '/html/main.html');
 })
 
