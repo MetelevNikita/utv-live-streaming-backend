@@ -33,16 +33,18 @@ const createUser = async  (req, res)  =>  {
     const newUser  = await Pool.query("INSERT INTO users (name, email, password, verifyPassword) VALUES ($1, $2, $3, $4) RETURNING *", [name, email, password, verifyPassword]);
 
     if(!newUser.rows[0])  {
-      return res.status(404).json({message:  "No user found"});
+      res.status(404).json({message:  "No user found"});
+      return
     }
 
     console.log(newUser.rows[0]);
     res.status(200).send(newUser.rows[0]);
-    res.status(200).redirect("/main");
+    res.status(200).redirect("/login");
 
   } catch  (error)  {
     console.log(error);
     res.status(500).json({message:   'что то пошло не так'})
+    return
   }
 
 }

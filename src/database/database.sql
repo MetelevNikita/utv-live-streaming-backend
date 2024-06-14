@@ -11,7 +11,8 @@ create TABLE users(
 create TABLE team(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
-  profession VARCHAR(255) NOT NULL
+  profession VARCHAR(255) NOT NULL,
+  image VARCHAR(255) NOT NULL
 );
 
 

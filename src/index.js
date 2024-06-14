@@ -9,6 +9,7 @@ const cookieParser  = require('cookie-parser');
 
 const registrationRouter = require('./Router/registrationRouter')
 const loginRouter  = require('./Router/loginRouter')
+const teamRouter = require('./Router/teamRouter')
 
 //
 
@@ -25,6 +26,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:  true}));
 app.use(express.static(publicPath));
+app.use(express.static('public/upload'))
 app.use(cookieParser());
 
 // use routes
@@ -32,6 +34,7 @@ app.use(cookieParser());
 
 app.use('/api/v1', registrationRouter);
 app.use('/api/v1', loginRouter);
+app.use('/api/v1', teamRouter);
 
 
 // middleware
