@@ -33,7 +33,7 @@ create TABLE portfolio(
   description VARCHAR(255) NOT NULL,
   image VARCHAR(255) NOT NULL,
   link VARCHAR(255) NOT NULL
-)
+);
 
 
 
