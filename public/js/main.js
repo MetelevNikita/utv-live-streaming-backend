@@ -1,7 +1,9 @@
 
 const formTeam = document.getElementById('form-team')
 
-const teamUrl = 'localhost:8000/api/v1/team'
+const teamUrl = 'http://utvls.tw1.su/api/v1/team'
+
+console.log(teamUrl)
 
 
 formTeam.addEventListener('submit', async (e) => {
@@ -32,6 +34,7 @@ formTeam.addEventListener('submit', async (e) => {
   )
 
   const data  = responce
+  console.log(data)
   return data
 
   } catch (error) {

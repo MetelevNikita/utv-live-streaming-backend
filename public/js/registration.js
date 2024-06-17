@@ -8,7 +8,9 @@ console.log(regSubmit)
 
 //
 
-const registrationUrl = 'localhost:8000/api/v1/registration';
+const registrationUrl = 'http://utvls.tw1.su/api/v1/registration';
+
+console.log(registrationUrl)
 
 regSubmit.addEventListener('click', (e) => {
   e.preventDefault()
@@ -42,6 +44,7 @@ regSubmit.addEventListener('click', (e) => {
 
 
       const data = responce.json()
+      console.log(data)
       return data
 
   } catch (error) {
