@@ -1,7 +1,7 @@
 
 const formTeam = document.getElementById('form-team')
 
-const teamUrl = 'http://utvls.tw1.su/api/v1/team'
+const teamUrl = 'https://www.utvls.tw1.su/api/v1/team'
 
 console.log(teamUrl)
 
