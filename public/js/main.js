@@ -1,7 +1,7 @@
 
 const formTeam = document.getElementById('form-team')
 
-const teamUrl = 'http://localhost:8000/api/v1/team'
+const teamUrl = 'localhost:8000/api/v1/team'
 
 
 formTeam.addEventListener('submit', async (e) => {

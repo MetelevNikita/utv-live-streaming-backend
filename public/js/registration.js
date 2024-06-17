@@ -8,7 +8,7 @@ console.log(regSubmit)
 
 //
 
-const registrationUrl = 'http://localhost:8000/api/v1/registration';
+const registrationUrl = 'localhost:8000/api/v1/registration';
 
 regSubmit.addEventListener('click', (e) => {
   e.preventDefault()
