@@ -8,7 +8,8 @@ const getUsers = async (req, res) => {
     const users = await Pool.query("SELECT * FROM users");
 
     if(users.rows.length < 1) {
-      return res.status(404).json({message: "No users found"});
+      res.status(404).json({message: "No users found"});
+      return
     }
 
     res.status(200).send(users.rows);
@@ -44,7 +45,6 @@ const createUser = async  (req, res)  =>  {
   } catch  (error)  {
     console.log(error);
     res.status(500).json({message:   'что то пошло не так'})
-    return
   }
 
 }

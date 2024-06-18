@@ -28,19 +28,29 @@ const getTeamCard = async (req, res) => {
 
 
 const createTeamCard = async (req, res) => {
-  const { name, profession } = req.body
-  const file = req.file
-  console.log(req.file)
 
-  const urlFile = `https://www.utvls.tw1.su/${file.filename}`
+  try {
 
-  const newTeamCard = await Pool.query('INSERT INTO team (name, profession, image) VALUES ($1, $2, $3) RETURNING *', [name, profession, urlFile])
+    const { name, profession } = req.body
+    const file = req.file
+    console.log(req.file)
 
-  if(!newTeamCard.rows[0]) {
-    res.status(400).json({message: 'Карточка не создана'})
+    const urlFile = `https://www.utvls.tw1.su/${file.filename}`
+
+    const newTeamCard = await Pool.query('INSERT INTO team (name, profession, image) VALUES ($1, $2, $3) RETURNING *', [name, profession, urlFile])
+
+    if(!newTeamCard.rows[0]) {
+      res.status(400).json({message: 'Карточка не создана'})
+      return
+    }
+
+    res.status(200).json(newTeamCard.rows[0])
+
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({message:  'internal server error'})
   }
 
-  res.status(200).json(newTeamCard.rows[0])
 }
 
 
