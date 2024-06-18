@@ -5,7 +5,7 @@ const multer = require('multer');
 
   const storageTeam = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'public/upload/team');
+    cb(null, path.join(__dirname, 'public/upload/team'));
   },
 
   filename: (req, file, cb) =>  {
