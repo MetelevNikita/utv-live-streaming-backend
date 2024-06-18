@@ -4,12 +4,13 @@ const formTeam = document.getElementById('form-team')
 const teamUrl = 'https://www.utvls.tw1.su/api/v1/team'
 
 
+console.log('v1.0')
+
 console.log(teamUrl)
 
 
 formTeam.addEventListener('submit', async (e) => {
   e.preventDefault()
-
 
   try {
 
@@ -18,7 +19,6 @@ formTeam.addEventListener('submit', async (e) => {
     const name = document.getElementById('name-team').value
     const profession = document.getElementById('profession-team').value
     const file = document.getElementById('file-team').files[0]
-
 
     newFormTeam.append('name', name)
     newFormTeam.append('profession', profession)
