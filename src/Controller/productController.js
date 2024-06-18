@@ -3,7 +3,7 @@ const Pool = require("../database/db")
 const getAllProduct = async (req, res) => {
   try {
 
-    const allProduct = await Pool.query("SELECT * FROM products")
+    const allProduct = await Pool.query("SELECT * FROM product")
 
     if(allProduct.rows.length < 1)  {
       res.status(404).send({message: 'No Product Found'})
