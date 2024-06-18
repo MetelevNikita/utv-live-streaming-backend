@@ -45,10 +45,8 @@ const postProduct  = async  (req, res)  => {
   try {
 
     const { title, category, description, price, quantity } = req.body
-    const file = req.file
-
     const host = req.host;
-    const filePath = req.protocol + "://" + host + '/' + req.file.path + '/' + file.filename;
+    const filePath = req.protocol + "://" + host + '/' + req.file.path
 
 
 

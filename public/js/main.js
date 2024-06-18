@@ -4,7 +4,7 @@ const formTeam = document.getElementById('form-team')
 const teamUrl = 'https://www.utvls.tw1.su/api/v1/team'
 
 
-console.log('v5.0')
+console.log('v6.0')
 
 
 

@@ -32,12 +32,8 @@ const createTeamCard = async (req, res) => {
   try {
 
     const { name, profession } = req.body
-    const file = req.file
-    console.log(req.file)
-
-
     const host = req.host;
-    const filePath = req.protocol + "://" + host + '/' + req.file.path + '/' + file.filename;
+    const filePath = req.protocol + "://" + host + '/' + req.file.path
 
     const newTeamCard = await Pool.query('INSERT INTO team (name, profession, image) VALUES ($1, $2, $3) RETURNING *', [name, profession, filePath])
 

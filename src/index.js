@@ -28,6 +28,7 @@ app.use(express.json());
 app.use(express.urlencoded({extended:  true}));
 app.use(express.static(publicPath));
 app.use(express.static('public/upload'))
+app.use('/public', express.static('public'));
 app.use(cookieParser());
 
 // use routes
