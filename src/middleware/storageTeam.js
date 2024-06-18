@@ -7,7 +7,7 @@ console.log(PATH)
 
   const storageTeam = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, 'utv-live-streaming-backend/public/upload/team');
+    cb(null, 'public/upload/team');
   },
 
   filename: (req, file, cb) =>  {

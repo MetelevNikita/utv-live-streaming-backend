@@ -46,10 +46,13 @@ const postProduct  = async  (req, res)  => {
 
     const { title, category, description, price, quantity } = req.body
     const file = req.file
-    const urlToFile = `https://utvls.tw1.su/${req.file.filename}`
+
+    const host = req.host;
+    const filePath = req.protocol + "://" + host + '/' + req.file.path + '/' + file.filename;
 
 
-    const newProduct = await Pool.query("INSERT INTO products ( title, category, description, price, quantity, image ) VALUES ($1, $2, $3, $4, $5, $6) * RETURNING",  [title, category, description, price, quantity, urlToFile])
+
+    const newProduct = await Pool.query("INSERT INTO products ( title, category, description, price, quantity, image ) VALUES ($1, $2, $3, $4, $5, $6) * RETURNING",  [title, category, description, price, quantity, filePath])
 
     if(newProduct.rows.length  <  1)   {
       res.status(404).send({message:  'Product not Created'})

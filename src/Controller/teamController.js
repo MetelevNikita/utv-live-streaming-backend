@@ -35,9 +35,11 @@ const createTeamCard = async (req, res) => {
     const file = req.file
     console.log(req.file)
 
-    const urlFile = `https://www.utvls.tw1.su/${file.filename}`
 
-    const newTeamCard = await Pool.query('INSERT INTO team (name, profession, image) VALUES ($1, $2, $3) RETURNING *', [name, profession, urlFile])
+    const host = req.host;
+    const filePath = req.protocol + "://" + host + '/' + req.file.path + '/' + file.filename;
+
+    const newTeamCard = await Pool.query('INSERT INTO team (name, profession, image) VALUES ($1, $2, $3) RETURNING *', [name, profession, filePath])
 
     if(!newTeamCard.rows[0]) {
       res.status(400).json({message: 'Карточка не создана'})

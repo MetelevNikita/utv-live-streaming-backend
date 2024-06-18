@@ -4,9 +4,8 @@ const formTeam = document.getElementById('form-team')
 const teamUrl = 'https://www.utvls.tw1.su/api/v1/team'
 
 
-console.log('v3.0')
+console.log('v5.0')
 
-console.log(teamUrl)
 
 
 formTeam.addEventListener('submit', async (e) => {
@@ -55,8 +54,6 @@ formTeam.addEventListener('submit', async (e) => {
 
 
 const productUrl = 'https://www.utvls.tw1.su/api/v1/product'
-console.log(productUrl)
-
 
 const categoryArr = ['Камеры', 'Свет', 'Звук', 'Операторское оборудование', 'Техника для трансляций']
 
@@ -81,7 +78,6 @@ categoryArr.map((item) => {
 
 const formProduct  = document.getElementById('form-product')
 
-console.log(formProduct)
 
 const descriptionProduct = document.getElementById('description-product')
 formProduct.insertBefore(categorySelect, descriptionProduct)
