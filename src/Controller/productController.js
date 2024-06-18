@@ -48,7 +48,7 @@ const postProduct  = async  (req, res)  => {
     const host = req.host;
     const filePath = req.protocol + "://" + host + '/' + req.file.path
 
-    const newProduct = await Pool.query("INSERT INTO product ( title, category, description, price, quantity, image ) VALUES ($1, $2, $3, $4, $5, $6) * RETURNING",  [title, category, description, price, quantity, filePath])
+    const newProduct = await Pool.query("INSERT INTO product ( title, category, description, price, quantity, image ) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *",  [title, category, description, price, quantity, filePath])
 
     if(newProduct.rows.length  <  1)   {
       res.status(404).send({message:  'Product not Created'})
