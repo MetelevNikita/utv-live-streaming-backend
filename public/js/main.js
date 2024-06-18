@@ -108,7 +108,7 @@ formProduct.addEventListener('submit', async  (e)  =>  {
     const descriptionProduct = document.getElementById('description-product').value
     const priceProduct = document.getElementById('price-product').value
     const quantityProduct  = document.getElementById('quantity-product').value
-    const fileProduct = document.getElementById('file-product').files[0]
+    const file = document.getElementById('file-product').files[0]
 
 
     newFormProduct.append('title', titleProduct)
@@ -116,7 +116,7 @@ formProduct.addEventListener('submit', async  (e)  =>  {
     newFormProduct.append('description', descriptionProduct)
     newFormProduct.append('price', priceProduct)
     newFormProduct.append('quantity', quantityProduct)
-    newFormProduct.append('file', fileProduct)
+    newFormProduct.append('file', file)
 
 
 

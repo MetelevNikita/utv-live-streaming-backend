@@ -17,7 +17,7 @@ productRouter.get('/product', getAllProduct)
 
 productRouter.get('/product/:id',  getSingleProduct)
 
-productRouter.post('/product', upload.single('fileProduct'),  postProduct)
+productRouter.post('/product', upload.single('file'),  postProduct)
 
 productRouter.delete('/product/:id',  deleteProduct)
 
