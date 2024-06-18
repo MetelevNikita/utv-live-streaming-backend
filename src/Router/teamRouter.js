@@ -22,7 +22,7 @@ const teamRouter = express.Router();
 
 
 teamRouter.get('/team', authJwtToken, getTeamCard)
-teamRouter.post('/team', authJwtToken, upload.single('fileTeam'),  createTeamCard)
+teamRouter.post('/team', authJwtToken, upload.single('file'),  createTeamCard)
 teamRouter.post('/team/:id', authJwtToken,  deleteTeamCard)
 
 //

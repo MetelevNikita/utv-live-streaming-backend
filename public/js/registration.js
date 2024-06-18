@@ -3,7 +3,6 @@ const regSubmit = document.getElementById('reg_submit');
 const regCansel = document.getElementById('reg_cansel');
 
 console.log(regCansel)
-
 console.log(regSubmit)
 
 //
