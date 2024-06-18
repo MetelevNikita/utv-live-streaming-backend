@@ -7,7 +7,7 @@ console.log(PATH)
 
   const storageTeam = multer.diskStorage({
   destination: (req, file, cb) => {
-    cb(null, PATH);
+    cb(null, 'public/upload/team');
   },
 
   filename: (req, file, cb) =>  {
