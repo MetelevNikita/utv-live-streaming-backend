@@ -10,6 +10,7 @@ const cookieParser  = require('cookie-parser');
 const registrationRouter = require('./Router/registrationRouter')
 const loginRouter  = require('./Router/loginRouter')
 const teamRouter = require('./Router/teamRouter')
+const productRouter = require('./Router/productRouter')
 
 //
 
@@ -35,6 +36,7 @@ app.use(cookieParser());
 app.use('/api/v1', registrationRouter);
 app.use('/api/v1', loginRouter);
 app.use('/api/v1', teamRouter);
+app.use('/api/v1', productRouter);
 
 
 // middleware
@@ -53,7 +55,7 @@ app.get('/registration', (req, res) => {
   res.sendFile(publicPath  +  '/html/registration.html');
 })
 
-app.get('/create', authJwtToken,  (req, res)  =>  {
+app.get('/create', authJwtToken, (req, res)  =>  {
     res.sendFile(publicPath + '/html/main.html');
 })
 

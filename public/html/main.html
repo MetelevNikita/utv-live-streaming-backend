@@ -17,12 +17,36 @@
   <form name="form-team" id="form-team">
     <input type="text" name="name" id="name-team" class="form_input" placeholder="введите имя">
     <input type="text" name="profession" id="profession-team" class="form_input" placeholder="введите профессию">
-    <input type="file" name="file" id="file-team" title="выбрать" class="form_input">
+    <input type="file" name="fileTeam" id="file-team" title="выбрать" class="form_input">
 
 
     <div class="form_buttons">
       <input type="submit" title="создать" class="form_button">
     </div>
+
+  </form>
+
+
+  <h2>Добавьте карточку с товаром</h2>
+
+  <form name="form-product" id="form-product">
+
+    <input type="text" name="title" id="title-product" class="form_input" placeholder="введите название">
+
+    <!-- category -->
+
+
+    <!-- category -->
+
+    <textarea form="form-product" wrap="soft" name="description" id="description-product" class="area_input" placeholder="введите описание"></textarea>
+    <input type="number" name="price" id="price-product" class="form_input" placeholder="введите цену аренды в сутки">
+    <input type="number" name="quantity" id="quantity-product" class="form_input" placeholder="введите количество позиций товара">
+    <input type="file" name="fileProduct" id="file-product" class="form_input" title="выбрать">
+
+    <div class="form_buttons">
+      <input type="submit" title="создать" class="form_button">
+    </div>
+
 
   </form>
 

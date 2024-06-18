@@ -41,3 +41,22 @@
   justify-content: center;
   align-items: center;
 }
+
+
+.area_input {
+  width: 600px;
+  height: 200px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  padding-top: 10px;
+
+}
+
+.form_input_select {
+  width: 600px;
+  height: 60px;
+  padding-top: 20px;
+  padding-left: 10px;
+  margin-bottom: 10px;
+
+}
