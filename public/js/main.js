@@ -118,6 +118,8 @@ formProduct.addEventListener('submit', async  (e)  =>  {
     newFormProduct.append('quantity', quantityProduct)
     newFormProduct.append('file', file)
 
+    console.log(...newFormProduct)
+
 
 
     const responce = await fetch(productUrl,  {
