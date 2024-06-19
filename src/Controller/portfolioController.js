@@ -53,8 +53,9 @@ const postPortfolio = async  (req, res)  =>  {
 
     console.log(req.file)
     const filePath = req.protocol + "://" + host + '/' + req.file.path
+    const file = 'file'
 
-    const newPortfolio  = await Pool.query('INSERT INTO portfolio (title, category, description, image, link) VALUES ($1, $2, $3, $4, $5) RETURNING *', [title, category, description, filePath, link])
+    const newPortfolio  = await Pool.query('INSERT INTO portfolio (title, category, description, image, link) VALUES ($1, $2, $3, $4, $5) RETURNING *', [title, category, description, file, link])
 
     if(newPortfolio.rows.length  <  1)  {
       res.status(200).send({message:  'Portfolio not created'})
@@ -69,6 +70,9 @@ const postPortfolio = async  (req, res)  =>  {
     res.status(500).send({message:  'Internal Server Error'})
   }
 }
+
+
+
 
 
 const deletePortfolio  = async  (req, res)  =>  {
