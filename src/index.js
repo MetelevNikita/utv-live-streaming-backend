@@ -58,7 +58,7 @@ app.get('/registration', (req, res) => {
   res.sendFile(publicPath  +  '/html/registration.html');
 })
 
-app.get('/create', (req, res)  =>  {
+app.get('/create', authJwtToken, (req, res)  =>  {
     res.sendFile(publicPath + '/html/main.html');
 })
 
