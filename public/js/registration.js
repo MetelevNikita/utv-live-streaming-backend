@@ -57,7 +57,6 @@ regSubmit.addEventListener('click', (e) => {
 
 regCansel.addEventListener('click',  (e)  =>  {
   e.preventDefault();
-
   console.log('click')
 
   window.location = '/login'
