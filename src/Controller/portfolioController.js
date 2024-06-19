@@ -50,9 +50,11 @@ const postPortfolio = async  (req, res)  =>  {
   try {
     const { title, category, description, link } = req.body
     const host = req.host;
+
+    console.log(req.file)
     const filePath = req.protocol + "://" + host + '/' + req.file.path
 
-    const newPortfolio  = await Pool.query('INSERT INTO portfolio (title, category, description, link, image) VALUES ($1, $2, $3, $4, $5) RETURNING *', [title, category, description, link, filePath])
+    const newPortfolio  = await Pool.query('INSERT INTO portfolio (title, category, description, image, link) VALUES ($1, $2, $3, $4, $5) RETURNING *', [title, category, description, filePath, link])
 
     if(newPortfolio.rows.length  <  1)  {
       res.status(200).send({message:  'Portfolio not created'})
