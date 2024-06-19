@@ -192,6 +192,7 @@ formPortfolio.addEventListener('submit', async   (e)  =>  {
     const titlePortfolio  = document.getElementById('title-portfolio').value
     const descriptionPortfolio  = document.getElementById('description-portfolio').value
     const linkPortfolio  = document.getElementById('link-portfolio').value
+    const file  = document.getElementById('file-portfolio').files[0]
 
     const newFormPortfolio  = new FormData()
 
@@ -199,6 +200,7 @@ formPortfolio.addEventListener('submit', async   (e)  =>  {
     newFormPortfolio.append('description', descriptionPortfolio)
     newFormPortfolio.append('link', linkPortfolio)
     newFormPortfolio.append('category', checkedSelectPortfolio)
+    newFormPortfolio.append('file', file)
 
 
     console.log(...newFormPortfolio);
