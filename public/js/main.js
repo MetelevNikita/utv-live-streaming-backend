@@ -141,3 +141,86 @@ formProduct.addEventListener('submit', async  (e)  =>  {
 
 
 
+// PORTFOLIO
+
+
+
+const portfolioUrl = 'https://www.utvls.tw1.su/api/v1/portfolio'
+
+const categroyPortfolio = ['Конференции', 'Концерты', 'Спорт']
+
+
+const portfolioSelect  = document.createElement('select')
+portfolioSelect.setAttribute('name', 'portfolio-select')
+portfolioSelect.setAttribute('placeholder', 'Выберите категорию')
+portfolioSelect.setAttribute('id', 'portfolio-select')
+portfolioSelect.setAttribute('class', 'form_input_select')
+portfolioSelect.setAttribute('required','required')
+
+
+
+categroyPortfolio.map((item) => {
+  const option = document.createElement('option')
+  option.setAttribute('value', item)
+  option.textContent = item
+  portfolioSelect.appendChild(option)
+});
+
+
+
+let checkedSelectPortfolio = 'Конференции'
+
+portfolioSelect.addEventListener('change', (e) => {
+  return checkedSelectPortfolio  = e.target.value
+})
+
+
+
+
+const descriptionPortfolio = document.getElementById('description-portfolio')
+
+
+const formPortfolio  = document.getElementById('form-portfolio')
+formPortfolio.insertBefore(portfolioSelect, descriptionPortfolio)
+
+
+formPortfolio.addEventListener('submit', async   (e)  =>  {
+  e.preventDefault()
+
+  try {
+
+    const titlePortfolio  = document.getElementById('title-portfolio').value
+    const descriptionPortfolio  = document.getElementById('description-portfolio').value
+    const linkPortfolio  = document.getElementById('link-portfolio').value
+
+    const newFormPortfolio  = new FormData()
+
+    newFormPortfolio.append('title', titlePortfolio)
+    newFormPortfolio.append('description', descriptionPortfolio)
+    newFormPortfolio.append('link', linkPortfolio)
+    newFormPortfolio.append('category', checkedSelectPortfolio)
+
+
+    console.log(...newFormPortfolio);
+
+    const responce = await fetch(portfolioUrl,  {
+      method: 'POST',
+      body: newFormPortfolio
+     })
+
+     const data = responce
+     console.log(data)
+     return data
+
+
+  } catch (error) {
+    console.log(error)
+  }
+})
+
+
+
+
+
+
+

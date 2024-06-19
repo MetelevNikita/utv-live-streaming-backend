@@ -11,6 +11,7 @@ const registrationRouter = require('./Router/registrationRouter')
 const loginRouter  = require('./Router/loginRouter')
 const teamRouter = require('./Router/teamRouter')
 const productRouter = require('./Router/productRouter')
+const portfolioRouter = require('./Router/portfolioRouter')
 
 //
 
@@ -38,6 +39,7 @@ app.use('/api/v1', registrationRouter);
 app.use('/api/v1', loginRouter);
 app.use('/api/v1', teamRouter);
 app.use('/api/v1', productRouter);
+app.use('/api/v1', portfolioRouter);
 
 
 // middleware
@@ -56,7 +58,7 @@ app.get('/registration', (req, res) => {
   res.sendFile(publicPath  +  '/html/registration.html');
 })
 
-app.get('/create', authJwtToken, (req, res)  =>  {
+app.get('/create', (req, res)  =>  {
     res.sendFile(publicPath + '/html/main.html');
 })
 
