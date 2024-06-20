@@ -84,7 +84,7 @@ const descriptionProduct = document.getElementById('description-product')
 formProduct.insertBefore(categorySelect, descriptionProduct)
 
 
-let checkedSelect = 'Камера'
+let checkedSelect = 'Камеры'
 
 
 categorySelect.addEventListener('change', (e)   =>   {
@@ -147,7 +147,7 @@ formProduct.addEventListener('submit', async  (e)  =>  {
 
 const portfolioUrl = 'https://www.utvls.tw1.su/api/v1/portfolio'
 
-const categroyPortfolio = ['Конференции', 'Концерты', 'Спорт']
+const categroyPortfolio = ['Конференции', 'Концерты', 'Спорт', 'Городские мероприятия']
 
 
 const portfolioSelect  = document.createElement('select')
