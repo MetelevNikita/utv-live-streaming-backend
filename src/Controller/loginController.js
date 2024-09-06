@@ -20,7 +20,9 @@ const postLogin = async (req, res) => {
       return
     }
 
-    const token  = jwt.sign({id: confirmLogin.rows[0].id, email: confirmLogin.rows[0].email}, process.env.SECRET_KEY, {expiresIn: '1h'})
+    console.log(confirmLogin.rows[0])
+
+    const token  = jwt.sign({email: confirmLogin.rows[0].email}, process.env.SECRET_KEY, {expiresIn: '1h'})
     console.log(token)
     res.cookie('token', token)
     res.redirect('/create')
