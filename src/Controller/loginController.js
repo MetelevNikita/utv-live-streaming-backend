@@ -8,7 +8,7 @@ const postLogin = async (req, res) => {
 
     const {email, password}  =  req.body;
 
-    if (!email ||!password)   {
+    if (!email || !password)   {
       res.status(400).send({message: 'поля не заполнены'})
       return
     }
@@ -21,6 +21,7 @@ const postLogin = async (req, res) => {
     }
 
     const token  = jwt.sign({id: confirmLogin.rows[0].id, email: confirmLogin.rows[0].email}, process.env.SECRET_KEY, {expiresIn: '1h'})
+    console.log(token)
     res.cookie('token', token)
     res.redirect('/create')
 
@@ -28,7 +29,7 @@ const postLogin = async (req, res) => {
 
   } catch (error) {
     console.log(error)
-    res.status(500).send({message: 'Что то пошло не так'})
+    res.status(500).send({message: `Что то пошло не так ${error}`})
   }
 }
 
