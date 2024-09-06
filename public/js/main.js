@@ -1,7 +1,7 @@
 
 const formTeam = document.getElementById('form-team')
 
-const teamUrl = 'https://www.utvls.tw1.su/api/v1/team'
+const teamUrl = 'https://utvls.tw1.su/api/v1/team'
 
 
 console.log('v6.0')
@@ -53,7 +53,7 @@ formTeam.addEventListener('submit', async (e) => {
 
 
 
-const productUrl = 'https://www.utvls.tw1.su/api/v1/product'
+const productUrl = 'https://utvls.tw1.su/api/v1/product'
 
 
 const categoryArr = ['Камеры', 'Свет', 'Звук', 'Операторское оборудование', 'Техника для трансляций']
@@ -145,7 +145,7 @@ formProduct.addEventListener('submit', async  (e)  =>  {
 
 
 
-const portfolioUrl = 'https://www.utvls.tw1.su/api/v1/portfolio'
+const portfolioUrl = 'https://utvls.tw1.su/api/v1/portfolio'
 
 const categroyPortfolio = ['Конференции', 'Концерты', 'Спорт', 'Городские мероприятия']
 
