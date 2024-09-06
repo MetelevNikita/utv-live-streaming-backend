@@ -7,7 +7,7 @@ console.log(regSubmit)
 
 //
 
-const registrationUrl = 'https://www.utvls.tw1.su/api/v1/registration';
+const registrationUrl = 'http://localhost:8000/api/v1/registration';
 
 console.log(registrationUrl)
 
