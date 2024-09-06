@@ -52,7 +52,7 @@ const postPortfolio = async  (req, res)  =>  {
     const host = req.host;
 
     console.log(req.file)
-    const filePath = req.protocol + "://" + host + '/' + req.file.path
+    const filePath = "https://utvls.tw1.su/" + req.file.path
 
 
     const newPortfolio  = await Pool.query('INSERT INTO portfolio (title, category, description, image, link) VALUES ($1, $2, $3, $4, $5) RETURNING *', [title, category, description, filePath, link])

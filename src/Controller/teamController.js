@@ -33,7 +33,7 @@ const createTeamCard = async (req, res) => {
 
     const { name, profession } = req.body
     const host = req.host;
-    const filePath = req.protocol + "://" + host + '/' + req.file.path
+    const filePath = "https://utvls.tw1.su/" + req.file.path
 
     const newTeamCard = await Pool.query('INSERT INTO team (name, profession, image) VALUES ($1, $2, $3) RETURNING *', [name, profession, filePath])
 
