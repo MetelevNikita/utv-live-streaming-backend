@@ -8,7 +8,7 @@ const getAllPortfolio = async (req, res) => {
     const allPortfolio = await Pool.query('SELECT * FROM portfolio')
 
     if(allPortfolio.rows.length < 1) {
-      res.status(200).send({message:  'No portfolio found'})
+      res.status(200).send([])
       return
     }
 
@@ -30,7 +30,7 @@ const getSinglePortfolio  = async  (req, res)  =>  {
     const singlePortfolio = await Pool.query('SELECT * FROM portfolio WHERE id=$1', [id])
 
     if(singlePortfolio.rows.length  <  1)  {
-      res.status(200).send({message:  'No portfolio found'})
+      res.status(200).send([])
       return
     }
 

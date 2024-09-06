@@ -6,7 +6,7 @@ const getAllProduct = async (req, res) => {
     const allProduct = await Pool.query("SELECT * FROM product")
 
     if(allProduct.rows.length < 1)  {
-      res.status(404).send({message: 'No Product Found'})
+      res.status(404).send([])
       return
     }
 

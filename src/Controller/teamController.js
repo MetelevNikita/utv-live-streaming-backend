@@ -19,7 +19,7 @@ const getTeamCard = async (req, res) => {
 
   } catch (error) {
     console.log(error)
-    res.status(400).json({message:  'Что то пошло не так'})
+    res.status(400).send([])
   }
 }
 
