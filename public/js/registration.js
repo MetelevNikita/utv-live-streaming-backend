@@ -7,7 +7,7 @@ console.log(regSubmit)
 
 //
 
-const registrationUrl = 'https://www.utvls.tw1.su/api/v1/registration';
+const registrationUrl = 'https://utvls.tw1.su/api/v1/registration';
 
 console.log(registrationUrl)
 
@@ -42,6 +42,8 @@ regSubmit.addEventListener('click', (e) => {
       })
 
 
+
+      console.log(responce)
       const data = responce.json()
       console.log(data)
       return data
