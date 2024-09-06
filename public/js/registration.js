@@ -11,7 +11,7 @@ const registrationUrl = 'https://utvls.tw1.su/api/v1/registration';
 
 console.log(registrationUrl)
 
-regSubmit.addEventListener('click', (e) => {
+regSubmit.addEventListener('click', async (e) => {
   e.preventDefault()
 
   try {
@@ -27,7 +27,7 @@ regSubmit.addEventListener('click', (e) => {
       return
     }
 
-      const responce = fetch(registrationUrl, {
+      const responce = await fetch(registrationUrl, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -42,9 +42,7 @@ regSubmit.addEventListener('click', (e) => {
       })
 
 
-
-      console.log(responce)
-      const data = responce.json()
+      const data = await responce.json()
       console.log(data)
       return data
 
